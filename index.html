@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>The mosquito game</title>
+    
+
+</head>
+<body>
+    <header>
+
+        <!--boton switch-->
+
+        <div class="switch-container">
+            <input type="checkbox" id="switch">
+            <label for="switch" class="lbl" id="lbl"></label>
+        </div> 
+
+        <!--boton switch-->
+
+    </header>
+
+    <main>
+
+        <!--caratula-->
+
+        <div id="caratula" class="caratula">
+            <h1 class="">The Mosquito Game</h1>
+        <p class="Mosquito">
+            ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒┌┐┌┐▒▒▒▒▒▒▒▒┌─┐▒▒▒┌┬┐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒│└┤└┬─┐┌──┬─┤─┼─┬┬┼┤└┬─┐┌─┬─┐┌──┬─┐▒▒▒
+▒▒▒│┌┤││┴┤││││┼├─│┼││││┌┤┼││┼│┼└┤│││┴┤▒▒▒
+▒▒▒└─┴┴┴─┘└┴┴┴─┴─┴┐├─┴┴─┴─┘├┐├──┴┴┴┴─┘▒▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒└┘▒▒▒▒▒▒▒└─┘▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▀▀▀█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▄▄▄▄▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒█▒▒▒▌▒▒▒▒▒▒▒▒▒▒▐▌▒▒▒▌▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒█▒▒▌▒▒▒▒▒▒▒▒▒▄█▒▐▒▒▌▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀█▒▒█▒▐▒▒▒▒▒▒▒▒█▒▒█▀▒█▒▒
+▒▒▒▒▒▒▒█▀██▒▒▒▒▒▒▒▒█▒▒▒▒█▒▒▒▒▒▒█▒▒█▒▒▒▌▒▒
+▒▒▒▒▒▒▐▒▒▄▒▐▒▒▒▒▒▒▄▄▀█▒▌▐▒▒▒▒█▀▒▄▀▒▒█▀▒▒▒
+▒▒▒▒▒▒▒█▒▀▒▒█▒▒▄█▀▒█▒▒▌▒▒█▒▄█▒▄▌▒▒▄█▒▒▒▒▒
+▒▒▒▒▒▒▒▒▀█▄▄▄▀█▒▒▄▒█▒▄▒█▒▒█▒▒▒▒▄█▀▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒█▒▒▒▒██▒▒▒██▒▀▀██▄▄▄▀▀▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒█▒▒▄▄▄█▀▀▀▒█▒▒▒▒▒█▄▄▄▄█▀▀▀█▀▀▀▌▒
+▒▒▒▒▒▒▒▒█▄█▀▒▒▒▒▒▄▄█▀▀▀██▄▒█▀▒▀▄▒▒▒▒█▒▒█▒
+▒▒▒▒▒▒▒██▒▒▒▒▒█▀▀▀▒▒▒▒▒█▒▒▌█▒▒▒▒▌▒▒▒▒▌▒█▒
+▒▒▒▒▒▒█▀▒▒▒▒▄▀▒▒▒▒▒▒▒▒█▒▒▒██▒▒▒█▒▒▒▒▐▒▒█▒
+▒▒▒▒█▀▒▒▒▒▒▐▒▒▒▒▒▒▒▒▄█▒▒▒▒▌▒▀██▀▄▄▄▄▌▒█▒▒
+▒▒▒█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄█▒▒▒▒▒█▒▒▒▒█▒▒▒▒▀▀▀▒▒▒
+▒█▀▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀▒▒▒▒▒▄█▒▒▒▒▒▒▌▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▄█▀▒▒▒▒▒▄▄▀▒▒▒▒▒▒▒▒▒▒
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀▒▒▒▒▒▒▒▒▒▒▒▒▒
+        </p>
+    </div>
+
+    <!--caratula-->
+
+    <!--Botones-->
+    <div class="menu" id="menu">
+    <button class="inicio" id="inicio"> Iniciar juego </button>
+    <button class="puntajes"> Tabla de Puntajes </button>
+    </div>
+    <!--Botones-->
+
+    <!--Contenido-->
+
+    <div  class="contenido" id="contenido">
+
+        <!--seleccion de nombre de usuario-->
+        <div hidden class="crearUsuario" id="crearUsuario">
+
+        <form id="formUsuario">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Tienes que elegir un nombre para comenzar!</label>
+              <input type="text" class="form-control" id="nombre" name="nombre">
+              <button id="nombreAleatorio" class="nombreAleatorio" name="post-title">crear nombre aleatorio</button>
+              <button type="submit" id="botonNombre" class="botonNombre">seleccionar nombre</button>
+            </div>      
+            
+          </form>
+
+          
+          <button id="start">Iniciar juego</button>
+
+        </div>
+        <!--seleccion de nombre de usuario--> 
+
+        <!--inicio de la aventura-->
+
+        <div class="historia" hidden id="txt1">
+            <p>Es una calurosa noche de verano y <strong id="usuario"></strong> se encontraba descansando en su habitación con la ventana abierta, intentando dormir.</p>
+            <p>Pero como es clásico en una noche como esta, la comezón causada por los mosquitos que picaron tu cuerpo no te dejan dormir, además de que siguen volando por ahí...</p>
+            <p>Ese zumbido es tan molesto, decides que es mejor levantarte de la cama e ir a la cocina a por algo para servirte un vaso de agua.</p>
+            <p>Volviendo para tu habitación te percatas de que ahora el zumbido de los mosquitos pareciera sonar a través de un megáfono ¿por qué se oye tan fuerte?</p>
+        
+            <p> ¿Que va a hacer <strong id="usuario"></strong> ahora? </p>
+
+            <nav>
+            <button Class="Btn1" id="Btn1">Entrar a ver que hace tanto ruido.</button>
+            <button Class="Btn2" id="Btn2">Ir por el veneno para mosquitos.</button>
+            </nav>
+
+        </div>
+
+        <!--inicio de la aventura-->
+        <!--camino 1-->
+        <div class="historia" hidden id="caminoValiente">
+            <p id="caminoValiente"> Esto no puede ser normal, ese sonido es demaciado extraño, tu esperitu valiente y aventurero te dice que tienes que ver que es lo que esta pasando. </p>
+            <p id="caminoValiente">A medida que te hacercas a la puerta el zumbido es escucha cada ves más fuerte, hasta que ya no puede ni escuchar tus propios pensamientos.</p>
+            <p id="caminoValiente">Pones tu mano sobre el picaporte y la abres la puerta rapido sin entrar en tu habitacion, cuando la puerta termina de abrirse lo vez.</p>
+            <p id="caminoValiente">Un mosquito gigante esta dando Vueltas dentro de tu habitacion, no tarda mucho tiempo en darse cuenta de tu precencia y se avalanza rapidamente sobre ti.</p>
+            <p id="caminoValiente">Sin pensarlo dos veces empiezas a correr en la direccion contraria, pero ¿a donde?
+            <p id="caminoValiente"> ¿Que va a hacer <strong id="usuario"></strong> ahora? </p>
+                
+            <button Class="Btn1a" id="Btn1a">Ir a despertar a tus padre</button> <br>
+            <button Class="Btn2a" id="Btn2a">Ir a por el hacha de tu padre</button>
+        </div>
+        <!--camino 1-->
+
+        <!--camino 1 final padre-->
+        <div class="historia" hidden id="caminoPadre">
+            <p id="caminoPadre">Vas corriendo a despertar a tus padres, gritas y golpeas su puerta</p>
+            <p id="caminoPadre">'Ya basta <strong id="usuario"></strong>! mañana hay que trabajar ¿por que haces tanto ruido?'</p>
+            <p id="caminoPadre">Cuando tu padre sale de su habitacion para seguir regañandote, puede ver como su cara pasa de una de enojo a una palida</p>
+            <p id="caminoPadre">Tu padre te levanta en brazos y volve a meterse en su habitacion.</p>
+            <p id="caminoPadre">No tengas miedo <strong id="usuario"></strong>, no es la primera ves que papi se enfrenta a uno de estos, quedate aqui </p>
+            <p id="caminoPadre">Tu padre saca una escopeta de su guardaropa, te revuelve el cabello y sale del cuarto cerrando la puerta detras de el </p>
+            <p id="caminoPadre">Escuchas un fuerte <strong id="usuario"></strong> luego silencio, el zumbido del mosquito ya no se escucha, sales de la habitacion de tu padre y ves al mosquito hecho perazos en el piso</p>
+            <p id="caminoPadre">Tu padre te mira, "bueno, yo tengo que volver a dormir, mañana trabajo, como yo lo mate, vos tenes que limpiar ahora, ¡hasta mañana cielo! </p>
+            <p id="caminoPadre"></p>
+
+            <button id="restart">
+                <a href="/index.html">Volver a comenzar</a>
+            </button>
+        </div>
+        <!--camino 1 final padre-->
+        <!--camino 1 final hacha-->
+        <div class="historia" hidden id="caminoHacha">
+            <p id="caminoHacha"> Vas corriendo fuera de casa en busca del hacha que tu padre guarda en el gabinete del patio. </p>
+            <p id="caminoHacha">¡oh no! llegas al gabinete pero esta cerrado! ¿y ahora que? </p>
+            <p id="caminoHacha">Ves el hacha a un lado del gabinete y la empieza a utilizar para abrir el gabinete </p>
+            <p id="caminoHacha">Despues de dos o tres golpes te das cuenta de lo que estas haciendo ¡tantos eran tus nervios que no te diste cuenta! </p>
+            <p id="caminoHacha">Cuando decides ir a buscar al mosquito resulta que el ya vino a por ti, aprovechas su arremetida hacia ti para darle un buen hachazo </p>
+            <p id="caminoHacha">Las parte del bicho cubren todo tu cuerpo, es un asco, tu padre se levanto por todo el ruido que hiciste, pero cuando te ve se da cuenta de lo realmete paso</p>
+            <p id="caminoHacha">Felicidades <strong id="usuario"></strong>! acabaste con tu primer mosquito gigante! ahora limpia todo esto y date una ducha! </p>
+
+            <p id="caminoHacha"></p>
+
+            <button id="restart2"><a href="/index.html">Volver a comenzar</a></button>
+        </div>
+        <!--camino 1 final hacha-->
+        <!--camino 2-->
+        <div class="historia" hidden id="caminoVeneno">
+            <p id="caminoVeneno">Das la vuelta para ir a buscar el veneno para mosquitos en aerosol, cuando finalmente lo encuentras, es entonces cuando oyes un fuerte <strong id="usuario"></strong></p>
+            <p id="caminoVeneno">Aunque nunca escuchaste algo asi en tu vida, es inconfundible que algo acaba de tirar la puerta de tu habitacion al piso</p>
+            <p id="caminoVeneno">Mil pensamientos pasan por tu mente en ese momento, uno de ellos fue: "bueno, esto no se puede poner peor"</p>
+            <p id="caminoVeneno">Pero claro que se podia poner peor, pues  un mosquito del tamaño de una motocicleta viene volando a toda velocidad hacia donde estas</p>
+            <p id="caminoVeneno">Es hora de correr</p>
+            <p id="caminoVeneno"> ¿Que va a hacer <strong id="usuario"></strong> ahora? </p>
+                
+            <button Class="Btn3a" id="Btn3a">Ir a por tu Madre</button>
+            <button Class="Btn3b" id="Btn3b">Ir al Patio</button>
+        </div>
+        <!--camino 2-->
+
+        <!--camino 2 Final Madre-->
+        <div class="historia" hidden id="caminoMadre">
+            <p id="caminoMadre">Aunque te manda a dormir temprano, tu mandre se queda leyendo y fumando en su estudio, ella sabra que hacer.</p>
+            <p id="caminoMadre">Sientes que nunca corriste tan rapido en tu vida, llegas al estudio de tu madre y entras dando un portazo.</p>
+            <p id="caminoMadre">'¿Que crees que estas haciendo? -dice tu madre con mala cara- Sabes que no podes entrar asi aca, ademas es tu hora de dormir'</p>
+            <p id="caminoMadre">Antes de que puedas explicar nada, ahi se escucha otra vez ese sonido "BZZZZZ", ¡viene a toda velocidad!</p>
+            <p id="caminoMadre">Tu madre se percata de la situacion cuando detras de ti aparece un mosquito gigante 'Ven aqui, rapido! -dice tu madre-'</p>
+            <p id="caminoMadre">En cuanto te hacercas a ella te quita el veneno en aerosol de las manos, y con su encededor zippo improvisa un lanza llamas </p>
+            <p id="caminoMadre">El enorme bicharraco arde, intenta acercarce a ustedes lo mas que puede, pero perece antes de llegar, finalmente cae, achicharrado, sobre la alfombra favorita de tu madre </p>
+            <p id="caminoMadre">'No tengas miedo cariño, ya termino' -dice tu mandre con una voz reconfortante- 'aun asi esa cosa que tragiste aqui arruino mi alfombra, asi que estas bajo castigo una semana' </p>
+            <p id="caminoMadre">Ella nunca tiene piedad, pero al menos salvo tu vida, ahora toca reponer la alfombra.</p>
+            <p id="caminoMadre"><strong id="usuario"></strong></p>
+
+            <button id="restart3"><a href="/index.html">Volver a comenzar</a></button>
+        </div>
+        <!--camino 2 Final Madre-->
+
+        <!--camino 2 Final vela-->
+        <div class="historia" hidden id="caminoFuego">
+            <p id="caminoPadre">Sales corriendo al patio de tu casa, el gigantesco mosquito va detras de ti.</p>
+            <p id="caminoPadre">por suerte, durante las noches a tu madres le gusta dejar unas velas prendidas que decoren el patio durante la noche</p>
+            <p id="caminoPadre">Un poco peligroso no? pero tu agilides mental te hace sumar 1 + 1 rapidamente</p>
+            <p id="caminoPadre"> con una de esas velas y tu veneno en aerosol puedes no solo envenar al mosquito, sino tambien prenderlo fuego!</p>
+            <p id="caminoPadre">tomas una de estas velas y esperas a que el bicho se hacerque un poco mas, y entonces...</p>
+            <p id="caminoPadre">se olle el click de el aerosol de despues <strong id="usuario"></strong> una llamarada sale despededida, pareciera como si puedieras tirar fuego de tus manos</p>
+            <p id="caminoPadre">el bicho empieza a caer de a poco en llamas, pasa a un lado tuyo y cae achicharrado al piso, lo miras un rato y vuelves la mirada hacia tu casa</p>
+            <p id="caminoPadre">Tus padres te estan mirando por la ventana, sabes que no hiciste nada malo, pero presientes que se te viene una.</p>
+            <p id="caminoPadre"><strong id="usuario"></strong></p>
+
+            <button id="restart4"><a href="/index.html">Volver a comenzar</a></button>
+        </div>
+        <!--camino 2 Final vela-->
+
+    </div>
+    <!--tabla de puntajes-->
+    <div hidden class="texto">
+        <strong id="usuario"></strong>
+        <p>consiguio</p>
+        <label class="display"></label>
+        <p>puntos</p>
+      </div>
+      <!--tabla de puntajes-->
+    <!--Contenido-->
+    </main>
+
+    <footer>
+        <img src="./Media/linkedin.png" alt="">
+        <img src="./Media/logotipo-de-github.png" alt="">
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/clases.js"></script>
+</body>
+</html>
